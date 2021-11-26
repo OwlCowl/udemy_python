@@ -11,19 +11,34 @@ players = [
     {'name': 'Jen', 'numbers': {19, 20, 12, 7, 3, 5}}
 ]
 
-new_list = []
+list_with_points = []
 name_list = []
 
-for i in players:
-    name_list.append(i['name'])
+name_list = [i['name'] for i in players]
 
 for params in players:
-    for name, numbers in params.items():
-        numbers_matched = list(lottery_numbers.intersection(set(numbers)))
-        numbers_matched1 = 100 ** len(numbers_matched)
-    new_list.append(numbers_matched1)
+    numbers_matched = [lottery_numbers.intersection(set(numbers))for name, numbers in params.items()]
+    calculated_points = 100 ** len(numbers_matched)
+    list_with_points.append(calculated_points)
 
-zip_func = dict(zip(name_list,new_list))
+zip_func = dict(zip(name_list, list_with_points))
 
 max_key = max(zip_func, key=zip_func.get)
 print(f'{max_key} won {zip_func[max_key]}')
+
+# Then, print out a line such as "Jen won 1000.".
+# The winnings are calculated with the formula:
+# 100 ** len(numbers_matched)
+
+top_player = players[0]  # start by saying "the top matching player is the first one"
+
+for player in players:  # Go over each player
+    matched_numbers = len(player["numbers"].intersection(lottery_numbers))  # Calculate how many numbers they matched
+    if matched_numbers > len(
+            top_player["numbers"].intersection(lottery_numbers)):  # If they matched more than the current top player...
+        top_player = player  # Say this player is the new top player
+
+# Calculate their winnings using the formula!
+winnings = 100 ** len(top_player["numbers"].intersection(lottery_numbers))
+
+print(f"{top_player['name']} won {winnings}.")
