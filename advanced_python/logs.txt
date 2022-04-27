@@ -1,0 +1,2 @@
+2022-04-27:11:42:03,287 INFO     [login.py:9] This will not show up
+2022-04-27:11:42:03,288 WARNING  [login.py:10] This will
