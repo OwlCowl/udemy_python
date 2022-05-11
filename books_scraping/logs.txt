@@ -1,0 +1,13 @@
+10-05-2022 15:56:56 INFO- 8s [books_app.py:13] Logging book list...
+11-05-2022 10:19:53 INFO- 8s [books_app.py:13] Logging book list...
+11-05-2022 10:19:54 INFO- 8s [all_books_page.py:26] Find number of catalog available "
+            
+                Page 1 of 50
+            
+            "
+11-05-2022 10:20:55 INFO- 8s [books_app.py:13] Logging book list...
+11-05-2022 10:20:56 INFO- 8s [all_books_page.py:26] Find number of catalog available "
+            
+                Page 1 of 50
+            
+            "
